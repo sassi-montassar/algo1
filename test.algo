@@ -1,1 +1,47 @@
-algo
+VAR
+STRING:ch:="";
+INTEGER :i;
+INTEGER:NB;
+INTEGER:x;
+INTEGER:j;
+BEGIN
+    REPEAT
+          {
+        write("saisir une phrase");
+        read(ch);  
+    }
+  UNTIL (verif(ch)==false)
+   verif{
+IF (ch[length(ch)]=".") THEN
+    return true;
+ELSE
+    return false;
+END_IF
+  }
+  calculer {
+      FOR i FROM ch[0] TO ch[length(ch)-1] STEP step  DO
+          IF (ch[i] in ["a".."z"]) THEN
+              NB := NB+1;
+          END_IF
+      END_FOR
+  }
+ calculer2 
+ {
+      FOR j FROM ch[0] TO ch[length(ch)-1] STEP step  DO
+          IF (ch[i] in ["a","e","i","u","o","y"]) THEN
+              x := x+1;
+          END_IF
+      END_FOR
+  }
+  afficher{
+      write(NB);
+      write(x);
+  }
+END
+
+
+
+
+
+
+
